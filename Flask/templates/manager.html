@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager</title>
+</head>
+<body>
+<hr/>
+<h1>管理者:</h1>
+<hr>
+
+<h2>現在誰在商店裡面?</h2>
+
+{% for user in users %}
+    <h2>Id:{{user.face_id}} 會員:{{user.name}} </h2>
+    <h2>購物車:{{user.cart}}</h2>
+
+{% endfor %}
+<hr>
+<h2>商品目前庫存: </h2>
+{% for num in nums %}
+    <h2>{{num}}</h2>
+{% endfor %}
+</body>
+</html>
