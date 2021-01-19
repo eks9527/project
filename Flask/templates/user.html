@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+
+{% for user in users %}
+    <div>
+        <h1>會員:</h1>
+        <h2>姓名：{{ user.name }}</h2>
+    </div>
+    <div>
+        <h2>in_store：{{ user.in_store }}</h2>
+        <hr>
+        <h2>購物車:</h2>
+        {% for cart in user.cart %}
+            {% if cart == 1 %}
+                <h3>Coke: 10 元</h3>
+            {% elif cart == 2 %}
+                <h3>Tea: 20 元</h3>
+            {% endif %}
+        {% endfor %}
+    </div>
+<hr>
+{% endfor %}
+
+<h2>Total: {{total}} 元</h2>
+
+</body>
+</html>
